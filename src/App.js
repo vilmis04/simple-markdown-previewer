@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+/*
+Get input from Editor component (textarea) via controlled form
+Pass markdown string to parser
+Render result
+*/
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import React from "react";
+import Editor from "./editor";
+import Previewer from "./previewer";
+
+class App extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      markdown: ""
+    }
+  }
+
+  render () {
+    // const elements = (<strong><em>Bold text</em></strong>);
+    return (
+      <div>
+        <Editor id="editor" />
+        <Previewer id="preview" />
+        {/* {elements} */}
+      </div>
+    );
+  }
 }
 
 export default App;
