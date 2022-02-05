@@ -2,6 +2,8 @@
 Get input from Editor component (textarea) via controlled form
 Pass markdown string to parser
 Render result
+Apply styles
+Implement maximizing feature
 */
 
 
@@ -13,17 +15,21 @@ class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      markdown: ""
+      markdown: '# Marked in browser\n\nRendered by **marked**.'
     }
+    this.updateMarkdown = this.updateMarkdown.bind(this);
+  }
+  updateMarkdown(text) {
+    this.setState({
+      markdown: text
+    });
   }
 
   render () {
-    // const elements = (<strong><em>Bold text</em></strong>);
     return (
       <div>
-        <Editor id="editor" />
-        <Previewer id="preview" />
-        {/* {elements} */}
+        <Editor id="editor" onChange={this.updateMarkdown} />
+        <Previewer id="preview" text={this.state.markdown} />
       </div>
     );
   }

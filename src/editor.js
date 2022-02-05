@@ -1,8 +1,10 @@
+// import { useState } from 'react';
+
 export default function Editor(props) {
 
     return (
         <div>
-            Editor
+            <textarea id="editor" placeholder="Enter your markup..." onChange={(event) => props.onChange(event.target.value)}></textarea>
         </div>
     );
 }
