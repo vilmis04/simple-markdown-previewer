@@ -28,7 +28,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Editor id="editor" onChange={this.updateMarkdown} />
+        <Editor id="editor" onChange={this.updateMarkdown} value={this.state.markdown}/>
         <Previewer id="preview" text={this.state.markdown} />
       </div>
     );
