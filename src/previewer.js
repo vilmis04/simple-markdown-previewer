@@ -8,6 +8,6 @@ export default function Previewer(props) {
         return {__html: clean};
       }
     return (
-        <div dangerouslySetInnerHTML={createMarkup()}></div>
+        <div id="preview" dangerouslySetInnerHTML={createMarkup()}></div>
     );
 }
