@@ -34,10 +34,17 @@ class App extends React.Component {
       display: 'flex',
       width: '100vw'
     }
+    const titleStyle = {
+      textAlign: 'center',
+      marginBottom: '2rem'
+    }
     return (
-      <div style={styles}>
-        <Editor onChange={this.updateMarkdown} value={this.state.markdown}/>
-        <Previewer text={this.state.markdown} />
+      <div>
+        <h1 style={titleStyle}>Simple Markdown Previewer</h1>
+        <div style={styles}>
+          <Editor onChange={this.updateMarkdown} value={this.state.markdown}/>
+          <Previewer text={this.state.markdown} />
+        </div>
       </div>
     );
   }

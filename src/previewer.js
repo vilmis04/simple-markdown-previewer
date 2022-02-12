@@ -11,7 +11,8 @@ export default function Previewer(props) {
     const styles = {
         display: 'flex',
         flexDirection: 'column',
-        width: '60%'
+        width: '60%',
+        padding: '2rem'
     }
     return (
         <div id="preview" dangerouslySetInnerHTML={createMarkup()}
