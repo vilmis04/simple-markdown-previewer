@@ -12,7 +12,9 @@ export default function Previewer(props) {
         display: 'flex',
         flexDirection: 'column',
         width: '60%',
-        padding: '2rem'
+        padding: '2rem',
+        border: 'solid black 1px',
+        margin: '0.5rem'
     }
     return (
         <div id="preview" dangerouslySetInnerHTML={createMarkup()}

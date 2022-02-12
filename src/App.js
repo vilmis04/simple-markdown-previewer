@@ -30,18 +30,23 @@ class App extends React.Component {
   }
 
   render () {
-    const styles = {
+    const componentStyles = {
       display: 'flex',
-      width: '100vw'
+      height: '90%',
+      justifyContent: 'space-evenly'
     }
     const titleStyle = {
       textAlign: 'center',
       marginBottom: '2rem'
     }
+    const containerStyles = {
+      width: '100vw',
+      height: '100vh'
+    }
     return (
-      <div>
+      <div style={containerStyles}>
         <h1 style={titleStyle}>Simple Markdown Previewer</h1>
-        <div style={styles}>
+        <div style={componentStyles}>
           <Editor onChange={this.updateMarkdown} value={this.state.markdown}/>
           <Previewer text={this.state.markdown} />
         </div>
