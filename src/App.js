@@ -30,8 +30,12 @@ class App extends React.Component {
   }
 
   render () {
+    const styles = {
+      display: 'flex',
+      width: '100vw'
+    }
     return (
-      <div>
+      <div style={styles}>
         <Editor onChange={this.updateMarkdown} value={this.state.markdown}/>
         <Previewer text={this.state.markdown} />
       </div>

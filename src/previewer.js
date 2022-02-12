@@ -8,7 +8,13 @@ export default function Previewer(props) {
     function createMarkup() {
         return {__html: clean};
       }
+    const styles = {
+        display: 'flex',
+        flexDirection: 'column',
+        width: '60%'
+    }
     return (
-        <div id="preview" dangerouslySetInnerHTML={createMarkup()}></div>
+        <div id="preview" dangerouslySetInnerHTML={createMarkup()}
+            style={styles}></div>
     );
 }
